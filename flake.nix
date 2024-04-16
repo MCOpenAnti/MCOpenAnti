@@ -1,5 +1,5 @@
 {
-  description = "Project Description"; #TODO: Project Description
+  description = "Project Description"; # TODO: Project Description
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -18,57 +18,71 @@
     extra-substituters = "https://devenv.cachix.org";
   };
 
-  outputs = inputs@{ flake-parts, nixpkgs, ... }:
+  outputs =
+    inputs@{ flake-parts, nixpkgs, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = [
-        inputs.devenv.flakeModule
+      imports = [ inputs.devenv.flakeModule ];
+      systems = [
+        "x86_64-linux"
+        "i686-linux"
+        "x86_64-darwin"
+        "aarch64-linux"
+        "aarch64-darwin"
       ];
-      systems = [ "x86_64-linux" "i686-linux" "x86_64-darwin" "aarch64-linux" "aarch64-darwin" ];
 
-      perSystem = { config, self', inputs', lib, pkgs, system, ... }: {
-        devenv.shells.default = {
-          name = "Project Name"; #TODO: Change Project Name
-          difftastic.enable = true;
-          imports = [];
+      perSystem =
+        {
+          config,
+          self',
+          inputs',
+          lib,
+          pkgs,
+          system,
+          ...
+        }:
+        {
+          devenv.shells.default = {
+            name = "Project Name"; # TODO: Change Project Name
+            difftastic.enable = true;
+            imports = [ ];
 
-          # https://devenv.sh/reference/options/
-          packages = with pkgs; [
+            # https://devenv.sh/reference/options/
+            packages = with pkgs; [
 
-          ];
+            ];
 
-          # Define Enviroment Virables
-          env = {
-            
+            # Define Enviroment Virables
+            env = {
+
+            };
+
+            # https://devenv.sh/scripts/
+            # scripts.hello.exec = "";
+
+            # enterShell = ''
+
+            # '';
+
+            # https://devenv.sh/languages/
+            languages.java = {
+              enable = true;
+              jdk.package = pkgs.jdk8; # Java Version/Package
+              gradle.enable = true; # Disable if not using gradle
+              maven.enable = false; # Disable if not using maven
+            };
+            languages.kotlin.enable = true;
+
+            # https://devenv.sh/pre-commit-hooks/
+            pre-commit.hooks = {
+              nixfmt.package = pkgs.nixfmt-rfc-style;
+              nixfmt.enable = true;
+              clippy.enable = true;
+            };
+
+            # https://devenv.sh/integrations/dotenv/
+            dotenv.enable = true;
           };
-
-          # https://devenv.sh/scripts/
-          # scripts.hello.exec = "";
-
-          # enterShell = ''
-
-          # '';
-
-          # https://devenv.sh/languages/
-          lanaguages.java = {
-            enable = true;
-            languages.java.jdk.package = pkgs.jdk8; # Java Version/Package
-            gradle.enable = true; # Disable if not using gradle
-            maven.enable = false; # Disable if not using maven
-          };
-
-          # https://devenv.sh/pre-commit-hooks/
-          pre-commit.hooks = {
-            nixfmt.package = pkgs.nixfmt-rfc-style;
-            nixfmt.enable = true;
-            clippy.enable = true;
-          };
-
-          # https://devenv.sh/integrations/dotenv/
-          dotenv.enable = true;
         };
-
-      };
-      flake = {
-      };
+      flake = { };
     };
 }
