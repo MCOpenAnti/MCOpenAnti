@@ -25,9 +25,7 @@
       systems = [
         "x86_64-linux"
         "i686-linux"
-        "x86_64-darwin"
         "aarch64-linux"
-        "aarch64-darwin"
       ];
 
       perSystem =
@@ -66,7 +64,6 @@
             # https://devenv.sh/languages/
             languages.java = {
               enable = true;
-              jdk.package = pkgs.jdk20; # Java Version/Package
               gradle.enable = true; # Disable if not using gradle
               maven.enable = false; # Disable if not using maven
             };
