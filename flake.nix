@@ -66,7 +66,7 @@
             # https://devenv.sh/languages/
             languages.java = {
               enable = true;
-              jdk.package = pkgs.jdk21; # Java Version/Package
+              jdk.package = pkgs.jdk20; # Java Version/Package
               gradle.enable = true; # Disable if not using gradle
               maven.enable = false; # Disable if not using maven
             };
