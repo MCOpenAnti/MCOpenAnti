@@ -1,2 +1,1 @@
-rootProject.name = "AntiCheat"
-
+include("common", "paper")

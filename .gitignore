@@ -40,10 +40,3 @@ bin/
 
 ### Mac OS ###
 .DS_Store
-
-
-
-### Nix Dev Enviroment ###
-.pre-commit-config.yaml
-.direnv
-.devenv

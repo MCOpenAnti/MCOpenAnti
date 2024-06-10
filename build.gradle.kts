@@ -1,18 +1,17 @@
 plugins {
     kotlin("jvm") version "1.9.23"
+    id("maven-publish")
 }
 
-group = "net.teaclient.anti"
-version = "1.0-SNAPSHOT"
+version = "0.0.1-DEV"
 
-repositories {
-    mavenCentral()
-}
 
-dependencies {
-    testImplementation("org.jetbrains.kotlin:kotlin-test")
-}
-
-tasks.test {
-    useJUnitPlatform()
+allprojects {
+    group = "net.teaclient.anti"
+    repositories {
+        maven("https://jitpack.io") {
+            name = "Jitpack"
+        }
+        mavenCentral()
+    }
 }
