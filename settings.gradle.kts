@@ -1,1 +1,1 @@
-include("common", "paper")
+include("common", "paper", "bedrock")
