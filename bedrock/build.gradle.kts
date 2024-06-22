@@ -47,6 +47,7 @@ tasks.withType<KotlinJsCompile>().configureEach {
         }
 
         scriptsDir.mkdirs()
+        file("${layout.buildDirectory.get()}\\processedResources\\js\\main").copyRecursively(newOutputDir)
 
         mjsFiles?.forEach { mjsFile ->
             println("Renaming ${mjsFile.name} to ${mjsFile.nameWithoutExtension}.js")
@@ -55,9 +56,6 @@ tasks.withType<KotlinJsCompile>().configureEach {
             mjsFile.delete()
         }
         file("${layout.buildDirectory.get()}\\compileSync").deleteRecursively()
-        // move processedResources to out
-        file("${layout.buildDirectory.get()}\\processedResources\\js\\main").copyRecursively(newOutputDir)
-        // delete processedResources
         println("Done building!")
     }
 }
