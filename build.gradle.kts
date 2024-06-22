@@ -12,6 +12,8 @@ allprojects {
         maven("https://jitpack.io") {
             name = "Jitpack"
         }
+        gradlePluginPortal()
         mavenCentral()
+        mavenLocal()
     }
 }
