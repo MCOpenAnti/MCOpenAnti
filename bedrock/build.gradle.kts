@@ -26,7 +26,7 @@ kotlin {
 
 
 tasks.withType<KotlinJsCompile>().configureEach {
-    compilerOptions{
-        target = "ESNext"
+    compilerOptions {
+        target = "es2015"
     }
 }
