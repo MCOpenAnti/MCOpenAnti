@@ -3,8 +3,8 @@ import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
 
 plugins {
     kotlin("multiplatform")
+    id("com.moowork.node") version "1.3.1"
 }
-
 
 version = "${properties["net.teaclient.version"]}-bedrock"
 
@@ -28,6 +28,7 @@ kotlin {
 
 
 tasks.withType<KotlinJsCompile>().configureEach {
+    dependsOn("initAntiCheat")
     compilerOptions {
         sourceMap = false
         moduleKind = JsModuleKind.MODULE_ES
@@ -59,5 +60,3 @@ tasks.withType<KotlinJsCompile>().configureEach {
         println("Done building!")
     }
 }
-
-
