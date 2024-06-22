@@ -20,4 +20,4 @@ include("common", "paper", "bedrock")
 
 
 /// Paper AntiCheat
-include("paper:1.20.1")
+include("paper")

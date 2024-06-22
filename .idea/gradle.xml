@@ -12,7 +12,6 @@
             <option value="$PROJECT_DIR$/bedrock" />
             <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/paper" />
-            <option value="$PROJECT_DIR$/paper/1.20.1" />
           </set>
         </option>
       </GradleProjectSettings>
