@@ -8,6 +8,11 @@ plugins {
 
 version = "${properties["net.teaclient.version"]}-bedrock"
 
+base {
+    archivesName.set(properties["net.teaclient.archives.base.name"].toString())
+}
+
+
 kotlin {
     js(IR) {
         nodejs {
@@ -37,7 +42,7 @@ tasks.withType<KotlinJsCompile>().configureEach {
     doLast {
         println("Renaming .mjs files to .js (${layout.buildDirectory.get()})")
         val oldOutputDir = file("${layout.buildDirectory.get()}\\compileSync\\js\\main\\productionExecutable\\kotlin")
-        val mjsFiles = oldOutputDir.listFiles { dir, name -> name.endsWith(".mjs") }
+        val mjsFiles = oldOutputDir.listFiles { _, name -> name.endsWith(".mjs") }
         val newOutputDir = file("${layout.buildDirectory.get()}\\out")
         val scriptsDir = file("${newOutputDir.path}\\scripts")
         if (newOutputDir.exists().not())
