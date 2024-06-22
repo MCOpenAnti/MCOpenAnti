@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="teaclient_anti_cheat-js-0.0.1-bedrock">
+    <output-path>$PROJECT_DIR$/bedrock/build/libs</output-path>
+    <root id="archive" name="teaclient_anti_cheat-js-0.0.1-bedrock.jar">
+      <element id="module-output" name="AntiCheat.bedrock.jsMain" />
+    </root>
+  </artifact>
+</component>

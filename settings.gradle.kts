@@ -1,6 +1,9 @@
 
 pluginManagement {
     repositories {
+        maven("https://repo.papermc.io/repository/maven-public/") {
+            name = "paperweight"
+        }
         gradlePluginPortal()
         mavenCentral()
         mavenLocal()
@@ -14,3 +17,7 @@ pluginManagement {
 
 
 include("common", "paper", "bedrock")
+
+
+/// Paper AntiCheat
+include("paper:1.20.1")
