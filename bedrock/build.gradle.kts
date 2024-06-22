@@ -1,7 +1,9 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJsCompile
+
 plugins {
-    id("org.jetbrains.kotlin.js") version "2.0.0"
-    id("maven-publish")
+    kotlin("multiplatform")
 }
+
 
 version = "${properties["net.teaclient.version"]}-bedrock"
 
@@ -16,11 +18,15 @@ kotlin {
     sourceSets {
         val jsMain by getting {
             dependencies {
-                implementation(project(":common"))
                 implementation(npm("@minecraft/server", "latest"))
             }
         }
-}
+    }
 }
 
 
+tasks.withType<KotlinJsCompile>().configureEach {
+    compilerOptions{
+        target = "ESNext"
+    }
+}
