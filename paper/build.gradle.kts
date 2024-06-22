@@ -36,6 +36,7 @@ tasks.runServer {
 
 
 bukkitPluginYaml {
+    name = "TeaCLientAnti"
     main = "net.teaclient.anti.Plugin"
     author = "TeaClientMC"
     website = "https://teaclient.net"
