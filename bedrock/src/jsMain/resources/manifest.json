@@ -1,0 +1,48 @@
+{
+  "format_version": 2,
+  "header": {
+    "name": "TeaClient AntiCheat",
+    "description": "An anti-cheat developed by the creators of TeaClient.",
+    "uuid": "3a73225c-4db1-4cc4-ae55-7aa29cda6583",
+    "version": [
+      1,
+      0,
+      0
+    ],
+    "min_engine_version": [
+      1,
+      21,
+      0
+    ]
+  },
+  "modules": [
+    {
+      "description": "Realm UUID",
+      "type": "data",
+      "uuid": "1bc564fd-e2bc-443e-9bd0-7fb616a5d93b",
+      "version": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "description": "Scripting API Configuration",
+      "language": "javascript",
+      "type": "script",
+      "uuid": "f255ba50-7b0e-479a-9035-4bed8b4d864b",
+      "version": [
+        1,
+        0,
+        0
+      ],
+      "entry": "AntiCheat.js"
+    }
+  ],
+  "dependencies": [
+    {
+      "module_name": "@minecraft/server",
+      "version": "1.12.0-beta"
+    }
+  ]
+}

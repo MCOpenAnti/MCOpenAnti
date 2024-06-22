@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@minecraft/common/-/common-1.2.0.tgz#a00d4130dcd5084dfd30e85e108c6d58eae8358b"
   integrity sha512-JdmEq4P3Z/FtoBzhLijFgMSVFnFRrUoLwY8DHHrgtFo0mfLTOLTB1RErYjLMsA6b7BGVNxkX/pfFRiH7QZ0XwQ==
 
-"@minecraft/server@latest":
-  version "1.11.0"
-  resolved "https://registry.yarnpkg.com/@minecraft/server/-/server-1.11.0.tgz#ad52e54d4ff89927572fa72cb5b571af26423d29"
-  integrity sha512-sVTKkAR7fgcgRrBrl+QiqlwiL07JTCSRbwSLpkmsPDvgfhH4bQsdPXC8fWZGRxwKikC4/oBxGq5j6pJp87yF6Q==
+"@minecraft/server@1.12.0-beta.1.21.1-stable":
+  version "1.12.0-beta.1.21.1-stable"
+  resolved "https://registry.yarnpkg.com/@minecraft/server/-/server-1.12.0-beta.1.21.1-stable.tgz#da77d1f6d0b51ed4f12edb1f164e49ca086b9c60"
+  integrity sha512-rHlhtt/Q/6WfgCK2dnrPqxqumUzIgZlq2jbtH0f1iPz79gOUsqq/zIahcZJdEh/v9Ay4Tz0CDLnoiIR+Ch+iHw==
   dependencies:
     "@minecraft/common" "^1.1.0"
 
