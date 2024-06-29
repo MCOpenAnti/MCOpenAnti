@@ -68,10 +68,12 @@ bukkitPluginYaml {
     website = "https://teaclient.net"
     apiVersion = "1.20.1"
     commands {
-        register("settings") {
+        register("TeaClientAnti") {
             description = "TeaClientAntiCheat Settings"
+            usage = "TeaClientAnti <sub-command>"
             permission = "permission.node"
-            aliases = listOf("cmd", "command")
+
+            aliases = listOf("settings")
         }
     }
 }
