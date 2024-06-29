@@ -67,4 +67,11 @@ bukkitPluginYaml {
     author = "TeaClientMC"
     website = "https://teaclient.net"
     apiVersion = "1.20.1"
+    commands {
+        register("settings") {
+            description = "TeaClientAntiCheat Settings"
+            permission = "permission.node"
+            aliases = listOf("cmd", "command")
+        }
+    }
 }
