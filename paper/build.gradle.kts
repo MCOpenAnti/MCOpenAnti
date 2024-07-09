@@ -72,7 +72,6 @@ bukkitPluginYaml {
             description = "TeaClientAntiCheat Settings"
             usage = "TeaClientAnti <sub-command>"
             permission = "permission.node"
-
             aliases = listOf("settings")
         }
     }

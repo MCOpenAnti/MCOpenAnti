@@ -23,19 +23,8 @@ class Listener : Listener {
         val player = event.player;
         var savedPositions = mapOf<String, Array<Vector>>()
         if (player.isValid || player.isInWater) {
-            savedPositions = savedPositions.plus(player.name to (savedPositions[player.name] ?: arrayOf(player.location.toVector())))
-            val lastPositions = savedPositions[player.name]
-            if (lastPositions == null || lastPositions.size < 4) return
-
-            player.sendMessage(Component.text("You are " + (player.location.y - lastPositions[lastPositions.size - 3].y) + " blocks away from your previous position."))
-//            val position = lastPositions[lastPositions.size - 3]
-//
-//            val yDistance = (player.location.y - position.y)
-//            player.sendMessage(Component.text("You are $yDistance blocks away from your previous position."))
-
 
         }
-
     }
 }
 
